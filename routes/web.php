@@ -14,5 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    $navBarLinks = ['Home', 'About Us', 'News'];
+
+    return view('home', ['navBarLinks' => $navBarLinks]);
+})->name('Home');
+
+Route::get('/About Us', function() {
+
+    $navBarLinks = ['Home', 'About Us', 'News'];
+
+    return view('aboutUs', ['navBarLinks' => $navBarLinks]);
+})->name('About Us');
+
+Route::get('/News', function() {
+
+    $navBarLinks = ['Home', 'About Us', 'News'];
+
+    return view('news', ['navBarLinks' => $navBarLinks]);
+})->name('News');
